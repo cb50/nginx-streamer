@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>$TITLE</title>
+    <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fezvrasta.github.io/bootstrap-material-design/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand"></h3>
+        </div>
+      </header>
+
+      <main style="margin-top:20%;" role="main" class="inner cover">
+          <center>
+            <h1 class="cover-heading" style="margin:10px;">$TITLE</h1>
+            <video id="player" class="video-js vjs-default-skin" height="360" width="640" controls playsinline webkit-playsinline preload="auto">
+              <source src="http://$SERVER_IP/hls/$STREAM_NAME.m3u8" type="application/x-mpegURL" />
+          </video>
+        </center>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.5/video.min.js"></script>
+    <script>
+      var player = videojs('#player');
+  </script>
+  </body>
+  </html>
