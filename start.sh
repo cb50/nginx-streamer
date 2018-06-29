@@ -3,6 +3,7 @@
 SERVER_IP=${SERVER_IP-127.0.0.1}
 STREAM_NAME=${STREAM_NAME-stream}
 TITLE=${TITLE-""}
+WORKER_PROCESSES=${WORKER_PROCESSES-1}
 
 cat << EOM
 
@@ -27,5 +28,6 @@ echo "http://${SERVER_IP}/"
 sed -i "s|\$STREAM_NAME|${STREAM_NAME}|g" /usr/share/nginx/html/index.html
 sed -i "s|\$SERVER_IP|${SERVER_IP}|g" /usr/share/nginx/html/index.html
 sed -i "s|\$TITLE|${TITLE}|g" /usr/share/nginx/html/index.html
+sed -i "s|\$WORKER_PROCESSES|${WORKER_PROCESSES}|g" /opt/nginx/conf/nginx.conf
 
 /opt/nginx/sbin/nginx -g "daemon off;"

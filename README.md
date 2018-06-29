@@ -12,6 +12,7 @@ docker run --rm \
  -e "TITLE=My Stream" \
  -e "STREAM_NAME=myStream" \
  -e "SERVER_IP=127.0.0.1" \
+ -e "WORKER_PROCESSES=2" \
  cb51/nginx-streamer
 ```
 
