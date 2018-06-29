@@ -12,7 +12,7 @@ stop a container ...         docker container stop [container id]
 
 Stream Source :
 EOM
-echo "Publish a h264 RTMP stream with URL rtmp://${SERVER_IP}/stream and use: ${STREAM_NAME} for the stream name."
+echo "Publish an h264 RTMP stream with URL rtmp://${SERVER_IP}/stream and use: ${STREAM_NAME} for the stream name."
 
 cat << EOM
 

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>$TITLE</title>
     <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
@@ -31,7 +30,7 @@
 
   <body class="text-center">
     <div class="video-container">
-      <video id="player" class="video-js vjs-default-skin" controls playsinline webkit-playsinline preload="auto">
+      <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls playsinline webkit-playsinline preload="auto">
                 <source src="http://$SERVER_IP/hls/$STREAM_NAME.m3u8" type="application/x-mpegURL" />
       </video>
     </div>
