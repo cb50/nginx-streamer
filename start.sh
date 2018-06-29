@@ -1,19 +1,23 @@
 #!/bin/sh
 
-SERVER_IP=${SERVER_IP}
-STREAM_NAME=${STREAM_NAME}
+SERVER_IP=${SERVER_IP-127.0.0.1}
+STREAM_NAME=${STREAM_NAME-stream}
 TITLE=${TITLE-""}
 
 cat << EOM
 
-Quick Commands:
-docker ps
-docker container stop [container id]
-docker restart [container id]
+Docker Quick Commands:
+list running containers...   docker ps
+stop a container ...         docker container stop [container id]
+
+Stream Source :
+EOM
+echo "Publish a h264 RTMP stream with URL rtmp://${SERVER_IP}/stream and use: ${STREAM_NAME} for the stream name."
+
+cat << EOM
 
 URLs :
 EOM
-
 echo "rtmp://${SERVER_IP}/${STREAM_NAME}"
 echo "http://${SERVER_IP}/hls/${STREAM_NAME}.m3u8"
 echo "http://${SERVER_IP}/"
@@ -23,4 +27,3 @@ sed -i "s|\$SERVER_IP|${SERVER_IP}|g" /usr/share/nginx/html/index.html
 sed -i "s|\$TITLE|${TITLE}|g" /usr/share/nginx/html/index.html
 
 /opt/nginx/sbin/nginx -g "daemon off;"
-
