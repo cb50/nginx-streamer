@@ -8,6 +8,7 @@ cat << EOM
 
 Docker Quick Commands:
 list running containers...   docker ps
+container resource usage...  docker container stats [container id]
 stop a container ...         docker container stop [container id]
 
 Stream Source :
