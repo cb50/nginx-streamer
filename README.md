@@ -1,7 +1,9 @@
 # Summary
+
 A quick way to convert your h264 RTMP stream to an HLS stream, and view it in your browser. The Docker image builds nginx with [nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module) (using a [less stale fork](https://github.com/sergey-dryabzhinsky/nginx-rtmp-module)), and serves the HLS stream on a webpage using [videojs](https://github.com/videojs).
 
 # Quickstart
+
 Create a docker container
 ```
 docker run --rm \
@@ -19,6 +21,7 @@ Open http://127.0.0.1 in a browser to view the stream rendered using videojs.
 The HLS stream URL is http://127.0.0.1/hls/myStream.m3u8
 
 # Build Locally
+
 To build the Docker image locally,
 ```
 git clone https://github.com/cb50/nginx-streamer
