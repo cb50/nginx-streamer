@@ -5,6 +5,20 @@ A quick way to convert your h264 RTMP stream to an HLS stream, and view it in yo
 # Quickstart
 
 Create a docker container
+
+Powershell:
+```
+docker run --rm `
+ -p 1935:1935 `
+ -p 80:8080 `
+ -e "TITLE=My Stream" `
+ -e "STREAM_NAME=myStream" `
+ -e "SERVER_IP=127.0.0.1" `
+ -e "WORKER_PROCESSES=2" `
+ cb51/nginx-streamer
+```
+
+Bash:
 ```
 docker run --rm \
  -p 1935:1935 \
@@ -16,7 +30,7 @@ docker run --rm \
  cb51/nginx-streamer
 ```
 
-Create a h264 stream, [using OBS or XSplit], with the URL `rtmp://127.0.0.1/stream` and stream name `myStream` so the name matches the `STREAM_NAME` variable in the `docker run` command above. 
+Create an h264 stream, [using OBS or XSplit], with the URL `rtmp://127.0.0.1/stream` and stream name `myStream` so the name matches the `STREAM_NAME` variable in the `docker run` command above. 
 
 Open http://127.0.0.1 in a browser to view the stream rendered using videojs.
 The HLS stream URL is http://127.0.0.1/hls/myStream.m3u8
