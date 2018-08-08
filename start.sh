@@ -4,14 +4,16 @@ SERVER_IP=${SERVER_IP-127.0.0.1}
 STREAM_NAME=${STREAM_NAME-stream}
 TITLE=${TITLE-""}
 WORKER_PROCESSES=${WORKER_PROCESSES-1}
+NGINX_HTTP_CONF=${NGINX_HTTP_CONF-access_log off;}
 
 cat << EOM
 
 Docker Quick Commands:
-list running containers...   docker ps
-container resource usage...  docker container stats [container id]
-open cli in container...     docker exec -it [container id] /bin/ash
-stop a container ...         docker container stop [container id]
+list running containers...              docker ps
+container resource usage...             docker container stats [container id]
+stop a container ...                    docker container stop [container id]
+open cli in container...                docker exec -it [container id] /bin/ash
+access goaccess from container cli ...  goaccess /tmp/hls/access.log         
 
 Stream Source :
 EOM
@@ -25,9 +27,10 @@ echo "rtmp://${SERVER_IP}/${STREAM_NAME}"
 echo "http://${SERVER_IP}/hls/${STREAM_NAME}.m3u8"
 echo "http://${SERVER_IP}/"
 
-sed -i "s|\$STREAM_NAME|${STREAM_NAME}|g" /usr/share/nginx/html/index.html
-sed -i "s|\$SERVER_IP|${SERVER_IP}|g" /usr/share/nginx/html/index.html
-sed -i "s|\$TITLE|${TITLE}|g" /usr/share/nginx/html/index.html
-sed -i "s|\$WORKER_PROCESSES|${WORKER_PROCESSES}|g" /opt/nginx/conf/nginx.conf
+sed -i "s|%%STREAM_NAME%%|${STREAM_NAME}|g" /usr/share/nginx/html/index.html
+sed -i "s|%%SERVER_IP%%|${SERVER_IP}|g" /usr/share/nginx/html/index.html
+sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/index.html
+sed -i "s|%%WORKER_PROCESSES%%|${WORKER_PROCESSES}|g" /opt/nginx/conf/nginx.conf
+sed -i "s|%%NGINX_HTTP_CONF%%|${NGINX_HTTP_CONF}|g" /opt/nginx/conf/nginx.conf
 
 /opt/nginx/sbin/nginx -g "daemon off;"

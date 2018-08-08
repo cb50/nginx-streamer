@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>$TITLE</title>
+    <title>%%TITLE%%</title>
+    <link rel="icon" type="image/png" href="play.png" sizes="128x128">
+    <link rel="apple-touch-icon" type="image/png" href="play.png" sizes="128x128">
     <link href="https://vjs.zencdn.net/7.0.3/video-js.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
@@ -34,7 +36,7 @@
   <body class="text-center">
     <div class="video-container">
       <video id="player" class="video-js vjs-default-skin vjs-big-play-centered" controls playsinline webkit-playsinline preload="auto">
-                <source src="http://$SERVER_IP/hls/$STREAM_NAME.m3u8" type="application/x-mpegURL" />
+                <source src="http://%%SERVER_IP%%/hls/%%STREAM_NAME%%.m3u8" type="application/x-mpegURL" />
       </video>
     </div>
 
