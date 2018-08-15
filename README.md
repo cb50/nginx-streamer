@@ -8,7 +8,7 @@ Create a docker container
 
 Powershell:
 ```
-docker run --rm `
+docker run -d --rm `
  -p 1935:1935 `
  -p 80:8080 `
  --name=ns `
@@ -18,12 +18,14 @@ docker run --rm `
  -e "SERVER_IP=127.0.0.1" `
  -e "WORKER_PROCESSES=1" `
  -e "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" `
+ -e "IFRAME=https://google.com" `
+ -e "GANALYTICS=UA-00000000-0" `
  cb51/nginx-streamer
 ```
 
 Bash:
 ```
-docker run --rm \
+docker run -d --rm \
  -p 1935:1935 \
  -p 80:8080 \
  --name=ns \
@@ -33,7 +35,8 @@ docker run --rm \
  -e "SERVER_IP=127.0.0.1" \
  -e "WORKER_PROCESSES=1" \
  -e "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" \
-
+ -e "IFRAME=https://google.com" \
+ -e "GANALYTICS=UA-00000000-0" \
  cb51/nginx-streamer
 ```
 

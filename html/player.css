@@ -1,0 +1,137 @@
+.video-js {
+    font-size: 10px;
+    color: #fff;
+  }
+  
+  .vjs-default-skin .vjs-big-play-button {
+    font-size: 3em;
+    line-height: 1.5em;
+    height: 1.5em;
+    width: 3em;
+    border: 0.06666em solid #fff;
+    border-radius: 0.3em;
+  }
+  
+  .video-js .vjs-control-bar,
+  .video-js .vjs-big-play-button,
+  .video-js .vjs-menu-button .vjs-menu-content {
+    /* IE8 - has no alpha support */
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Slider - used for Volume bar and Progress bar */
+  .video-js .vjs-slider {
+    background-color: #545454;
+    background-color: rgba(84, 84, 84, 0.5);
+  }
+  
+  .video-js .vjs-volume-level,
+  .video-js .vjs-play-progress,
+  .video-js .vjs-slider-bar {
+    background: #fff;
+  }
+  
+  .video-js .vjs-load-progress {
+    background: #949494;
+    background: rgba(84, 84, 84, 0.5);
+  }
+  
+  .video-js .vjs-load-progress div {
+    background: #d4d4d4;
+    background: rgba(84, 84, 84, 0.75);
+  }
+  
+  body {
+    min-width: 1166px;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    color: #aaa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: radial-gradient(#333, #0b1114);
+  }
+  
+  a, a:hover, a:visited {
+    color: #76DAFF;
+  }
+  
+  .video-js .vjs-control-bar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  .wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .wrapper > * {
+    padding: 10px;
+    flex: 1 100%;
+  }
+  
+  .header {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .main {
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .aside-1 {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .aside-2 {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  @media all and (min-width: 600px) {
+    .aside {
+      flex: 1 auto;
+    }
+  }
+  @media all and (min-width: 800px) {
+    .main {
+      flex: 3 0px;
+    }
+  
+    .aside-1 {
+      order: 1;
+    }
+  
+    .main {
+      order: 2;
+    }
+  
+    .aside-2 {
+      order: 3;
+    }
+  
+    .footer {
+      order: 4;
+    }
+  }
+  iframe {
+    overflow: hidden !important;
+    margin-top: -350px;
+  }
+  
+  #shim {
+    overflow: hidden;
+    height: 700px;
+  }
