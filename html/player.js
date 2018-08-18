@@ -11,6 +11,9 @@ function iframeChange(){
   }
  }
    options = {
+     hls: {
+      overrideNative: true
+     },
      autoplay: true,
      muted: true,
      fluid: true,
