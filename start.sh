@@ -13,9 +13,9 @@ cat << EOM
 Docker Quick Commands:
 list running containers...              docker ps
 container resource usage...             docker container stats [container id]
-stop a container ...                    docker container stop [container id]
+stop a container...                    docker container stop [container id]
 open cli in container...                docker exec -it [container id] /bin/ash
-access goaccess from container cli ...  goaccess /tmp/hls/access.log         
+access goaccess from container cli...  goaccess /tmp/hls/access.log         
 
 Stream Source :
 EOM

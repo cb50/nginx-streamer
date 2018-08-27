@@ -1,21 +1,21 @@
 function iframeChange(){
-  let fb = document.getElementById("feedback");
-  let shim = document.getElementById("shim");
-  let fbs = fb.style.marginTop;
+  var fb = document.getElementById("feedback");
+  var shim = document.getElementById("shim");
+  var fbs = fb.style.marginTop;
   if (fbs === "-400px"){
     fb.style.marginTop = "-200px";
     shim.style.height = "300px";
   } else{
     fb.style.marginTop = "-400px";
-    shim.style.height = "720px";
+    shim.style.height = "880px";
   }
  }
    options = {
      hls: {
       overrideNative: true
      },
-     autoplay: true,
-     muted: true,
+     autoplay: false,
+     muted: false,
      fluid: true,
      controls: true,
      playsinline:true,
@@ -43,3 +43,14 @@ function iframeChange(){
        }
      });
    }
+
+// Warn non-Chrome/Firefox users
+var parser = new UAParser();
+// by default it takes ua string from current browser's window.navigator.userAgent
+console.log(parser.getResult());
+var result = parser.getResult();
+var bn = result.browser.name;
+if (bn != "Chrome" && bn != "Chromium" && bn != "Firefox"){
+  var header = document.getElementById('header');
+  header.insertAdjacentHTML('afterbegin', '<div class="alert alert-danger"><strong>'+bn+' Warning!</strong> Best viewed in Chrome or Firefox.</div>');
+}
