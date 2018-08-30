@@ -9,13 +9,7 @@
     <link rel="icon" type="image/png" href="play.png" sizes="128x128">
     <link rel="apple-touch-icon" type="image/png" href="play.png" sizes="128x128">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.5/video-js.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/videojs-errors@4.1.2/dist/videojs-errors.css" rel="stylesheet">
     <link href="player.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.0.5/video.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-errors@4.1.2/dist/videojs-errors.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.18/src/ua-parser.min.js"></script> 
      <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=%%GANALYTICS%%"></script>
     <script>
@@ -37,7 +31,7 @@
       </header>
 
       <main role="main" class="inner cover">
-        <video id="player" class="video-js vjs-default-skin vjs-big-play-centered"></video>
+        <div class="alert alert-danger">%%TS_MESSAGE%%</div>
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -46,6 +40,5 @@
         </div>
       </footer>
     </div>
-    <script src="player.js"></script>
   </body>
 </html>

@@ -16,7 +16,6 @@ function iframeChange(){
      },
      autoplay: false,
      muted: false,
-     fluid: true,
      controls: true,
      playsinline:true,
      preload:"auto"
