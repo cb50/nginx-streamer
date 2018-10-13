@@ -1,0 +1,29 @@
+version: "3"
+services:
+  nginx-streamer:
+    # replace username/repo:tag with your name and image details
+    image: nginx-streamer
+    environment:
+      - "TITLE=My Stream"
+      - "STREAM_NAME=myStream"
+      - "SERVER_IP=192.168.1.149"
+      - "WORKER_PROCESSES=1"
+      - "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" 
+      - "IFRAME=https://google.com" 
+      - "GANALYTICS=UA-00000000-0"
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          # 10% of CPU all cores
+          cpus: "0.1"
+          memory: 250M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "1935:1935"
+      - "80:8080"
+    networks:
+      - webnet
+networks:
+  webnet:
