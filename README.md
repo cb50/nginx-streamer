@@ -4,9 +4,19 @@ A quick way to convert your h264 RTMP stream to an HLS stream, and view it in yo
 
 # Quickstart
 
-Create a docker container
+### Create a docker stack
+! requires Docker compose
+* download and modify the docker-compose.yml file to suit your configuration
+* ``docker swarm init``
+* ``docker stack deploy -c docker-compose.yml ns`` where "ns" is the name of the app
+* ``docker service ls`` to see the new swarm
+* ``docker stack rm ns`` stops the swarm
+* ``docker swarm leave --force`` leaves the swarm
 
-Powershell:
+
+### Create a docker container
+
+#### Powershell
 ```
 docker run -d --rm `
  -p 1935:1935 `
@@ -23,7 +33,7 @@ docker run -d --rm `
  cb51/nginx-streamer
 ```
 
-Bash:
+#### Bash
 ```
 docker run -d --rm \
  -p 1935:1935 \
