@@ -5,14 +5,14 @@ services:
     environment:
       - "TITLE=My Stream"
       - "STREAM_NAME=myStream"
-      - "SERVER_IP=192.168.1.149"
+      - "SERVER_IP=192.168.83.179"
       - "WORKER_PROCESSES=1"
       - "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" 
       - "IFRAME=https://google.com" 
       - "GANALYTICS=UA-00000000-0"
-      - "TS_MESSAGE=<strong>TS Message\!</strong>"
+      - "BLACKLIST_MESSAGE=<strong>Blacklist Message!</strong>"
         # Blacklisted IPs with be redirected to error page
-      - "TS_IPS=192.168.120.5;192.168.120.6"  
+      - "BLACKLIST_IPS=192.168.120.5 1;192.168.120.6 1;"  
       - "HEADER=<h1>myStream</h1>"
       - "FOOTER=footer message"
     deploy:
