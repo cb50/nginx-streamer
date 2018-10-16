@@ -16,23 +16,6 @@ A quick way to convert your h264 RTMP stream to an HLS stream, and view it in yo
 
 ### Create a docker container
 
-#### Powershell
-```
-docker run -d --rm `
- -p 1935:1935 `
- -p 80:8080 `
- --name=ns `
- --tmpfs /tmp/hls `
- -e "TITLE=My Stream" `
- -e "STREAM_NAME=myStream" `
- -e "SERVER_IP=127.0.0.1" `
- -e "WORKER_PROCESSES=1" `
- -e "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" `
- -e "IFRAME=https://google.com" `
- -e "GANALYTICS=UA-00000000-0" `
- cb51/nginx-streamer
-```
-
 #### Bash
 ```
 docker run -d --rm \
