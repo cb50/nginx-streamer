@@ -5,7 +5,7 @@ services:
     environment:
       - "TITLE=My Stream"
       - "STREAM_NAME=myStream"
-      - "SERVER_IP=192.168.83.179"
+      - "SERVER_IP=127.0.0.1"
       - "WORKER_PROCESSES=1"
       - "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" 
       - "IFRAME=https://google.com" 
