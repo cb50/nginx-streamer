@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx-streamer:
-    image: nginx-streamer
+    image: cb51/nginx-streamer
     environment:
       - "TITLE=My Stream"
       - "STREAM_NAME=myStream"

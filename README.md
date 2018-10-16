@@ -14,7 +14,7 @@ A quick way to convert your h264 RTMP stream to an HLS stream, and view it in yo
 * ``docker exec -it ns_nginx-streamer.1.sdfk /bin/ash`` launches a terminal in a container named ns_nginx-streamer.1.sdfk as shown using ``docker container ls`` 
 * ``docker stack rm ns`` stops the swarm where "ns" is the name of the app
 * ``docker swarm leave --force`` leaves the swarm
-
+* ``docker system prune -a`` remove all stopped containers and unused images
 
 ### Or, Create a docker container
 
