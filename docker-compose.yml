@@ -10,6 +10,11 @@ services:
       - "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" 
       - "IFRAME=https://google.com" 
       - "GANALYTICS=UA-00000000-0"
+      - "TS_MESSAGE=<strong>TS Message\!</strong>"
+        # Blacklisted IPs with be redirected to error page
+      - "TS_IPS=192.168.120.5;192.168.120.6"  
+      - "HEADER=<h1>myStream</h1>"
+      - "FOOTER=footer message"
     deploy:
       replicas: 2
       resources:
