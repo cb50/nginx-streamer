@@ -1,11 +1,21 @@
+#!/bin/sh
+
+SERVER_IP=${SERVER_IP-127.0.0.1}
+STREAM_NAME=${STREAM_NAME-stream}
+TITLE=${TITLE-""}
+HEADER=${HEADER-""}
+FOOTER=${FOOTER-""}
+TS_MESSAGE=${TS_MESSAGE-""}
+WORKER_PROCESSES=${WORKER_PROCESSES-1}
+NGINX_HTTP_CONF=${NGINX_HTTP_CONF-access_log off;}
 GANALYTICS=${GANALYTICS-UA-00000000-0}
-BLACKLIST_IPS=${BLACKLIST_IPS-""}
+TS_IPS=${TS_IPS-""}
 
 cat << EOM
 
 Docker Quick Commands:
 list running containers...              docker ps
-container resource usage...             docker container stats.[container id]
+container resource usage...             docker container stats [container id]
 stop a container...                    docker container stop [container id]
 open cli in container...                docker exec -it [container id] /bin/ash
 access goaccess from container cli...  goaccess /tmp/hls/access.log         
@@ -28,13 +38,13 @@ sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%GANALYTICS%%|${GANALYTICS}|g" /usr/share/nginx/html/index.html
-sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/blacklist.html
-sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/blacklist.html
-sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/blacklist.html
-sed -i "s|%%BLACKLIST_MESSAGE%%|${BLACKLIST_MESSAGE}|g" /usr/share/nginx/html/blacklist.html
-sed -i "s|%%GANALYTICS%%|${GANALYTICS}|g" /usr/share/nginx/html/blacklist.html
+sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/ts.html
+sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/ts.html
+sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/ts.html
+sed -i "s|%%TS_MESSAGE%%|${TS_MESSAGE}|g" /usr/share/nginx/html/ts.html
+sed -i "s|%%GANALYTICS%%|${GANALYTICS}|g" /usr/share/nginx/html/ts.html
 sed -i "s|%%WORKER_PROCESSES%%|${WORKER_PROCESSES}|g" /opt/nginx/conf/nginx.conf
 sed -i "s|%%NGINX_HTTP_CONF%%|${NGINX_HTTP_CONF}|g" /opt/nginx/conf/nginx.conf
-sed -i "s|%%BLACKLIST_IPS%%|${BLACKLIST_IPS}|g" /opt/nginx/conf/nginx.conf
+sed -i "s|%%TS_IPS%%|${TS_IPS}|g" /opt/nginx/conf/nginx.conf
 
 /opt/nginx/sbin/nginx -g "daemon off;"
