@@ -1,56 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>%%TITLE%%</title>
-    <link rel="icon" type="image/png" href="play.png" sizes="128x128">
-    <link rel="apple-touch-icon" type="image/png" href="play.png" sizes="128x128">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.5/video-js.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/videojs-errors@4.3.0/dist/videojs-errors.css" rel="stylesheet">
-    <link href="player.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.5/video.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-errors@4.3.0/dist/videojs-errors.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js"></script> 
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=%%GANALYTICS%%"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '%%GANALYTICS%%');
-    </script>
-  </head>
-  <body class="text-center">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto" id="header">
-        <div class="inner">
-          <h3 class="masthead-brand">%%HEADER%%</h3>
-          <nav class="nav nav-masthead justify-content-center">
-          </nav>
-        </div>
-      </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>%%TITLE%%</title>
+  <link rel="icon" type="image/png" href="play.png" sizes="128x128">
+  <link rel="apple-touch-icon" type="image/png" href="play.png" sizes="128x128">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.5/video-js.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/videojs-errors@4.3.0/dist/videojs-errors.css" rel="stylesheet">
+  <link href="player.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.5/video.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-flash@2/dist/videojs-flash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-errors@4.3.0/dist/videojs-errors.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ua-parser-js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%%GANALYTICS%%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-      <main role="main" class="inner cover">
-        <video id="player" class="video-js vjs-default-skin vjs-big-play-centered"></video>
-      </main>
-      <main role="main" class="inner cover">
-        <iframe id="feedback" src="%%IFRAME%%">
-          <p>Your browser does not support iframes.</p>
-        </iframe>
-      </main>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', '%%GANALYTICS%%');
+  </script>
+</head>
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>%%FOOTER%%</p>
-        </div>
-      </footer>
-    </div>
-    <script src="player.js"></script>
-  </body>
+<body class="text-center">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto" id="header">
+      <div class="inner">
+        <h3 class="masthead-brand">%%HEADER%%</h3>
+        <nav class="nav nav-masthead justify-content-center">
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" class="inner cover">
+      <video id="player" class="video-js vjs-default-skin vjs-big-play-centered"></video>
+    </main>
+    <main role="main" class="inner cover">
+      <iframe id="feedback" src="%%IFRAME%%">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>%%FOOTER%%</p>
+      </div>
+    </footer>
+  </div>
+  <script src="player.js"></script>
+</body>
+
 </html>
