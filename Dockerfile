@@ -1,5 +1,5 @@
 
-ARG ALPINE_VERSION=3.9
+ARG ALPINE_VERSION=3.10
 
 FROM alpine:${ALPINE_VERSION} as builder
 
@@ -33,7 +33,7 @@ RUN	apk update && \
  zlib-dev \
  make
 
-ARG NGINX_VERSION=1.15.9
+ARG NGINX_VERSION=1.17.4
 
 RUN	cd /tmp/ &&	\
 	curl --remote-name http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz && \
@@ -50,15 +50,13 @@ RUN	cd /tmp && \
 	make &&	\
 	make install
 
-ARG ALPINE_VERSION=3.9
-
 FROM alpine:${ALPINE_VERSION}
 
 RUN rm /etc/apk/repositories
 ADD repositories /etc/apk/repositories
 
 # TODO Fix variable expansion 
-RUN sed -i "s|%%ALPINE_VERSION%%|3.9|g" /etc/apk/repositories 
+RUN sed -i "s|%%ALPINE_VERSION%%|3.10|g" /etc/apk/repositories 
 
 RUN apk update && \
 	apk add \

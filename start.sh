@@ -6,6 +6,7 @@ TITLE=${TITLE-""}
 HEADER=${HEADER-""}
 FOOTER=${FOOTER-""}
 BLACKLIST_MESSAGE=${BLACKLIST_MESSAGE-""}
+IFRAME=${IFRAME-"https://google.com"}
 WORKER_PROCESSES=${WORKER_PROCESSES-1}
 NGINX_HTTP_CONF=${NGINX_HTTP_CONF-access_log off;}
 GANALYTICS=${GANALYTICS-UA-00000000-0}
@@ -38,6 +39,7 @@ sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%GANALYTICS%%|${GANALYTICS}|g" /usr/share/nginx/html/index.html
+sed -i "s|%%IFRAME%%|${IFRAME}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/blacklist.html
 sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/blacklist.html
 sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/blacklist.html
