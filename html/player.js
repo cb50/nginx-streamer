@@ -1,15 +1,3 @@
-function iframeChange(){
-  var fb = document.getElementById("feedback");
-  var shim = document.getElementById("shim");
-  var fbs = fb.style.marginTop;
-  if (fbs === "-400px"){
-    fb.style.marginTop = "-200px";
-    shim.style.height = "300px";
-  } else{
-    fb.style.marginTop = "-400px";
-    shim.style.height = "880px";
-  }
- }
    options = {
      hls: {
       overrideNative: true
