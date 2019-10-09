@@ -39,7 +39,7 @@ sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%GANALYTICS%%|${GANALYTICS}|g" /usr/share/nginx/html/index.html
-sed -i "s|%%IFRAME%%|${IFRAME}|g" /usr/share/nginx/html/index.html
+sed -i "s|%%FEEDBACK%%|${FEEDBACK}|g" /usr/share/nginx/html/index.html
 sed -i "s|%%TITLE%%|${TITLE}|g" /usr/share/nginx/html/blacklist.html
 sed -i "s|%%HEADER%%|${HEADER}|g" /usr/share/nginx/html/blacklist.html
 sed -i "s|%%FOOTER%%|${FOOTER}|g" /usr/share/nginx/html/blacklist.html

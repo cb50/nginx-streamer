@@ -8,7 +8,7 @@ services:
       - "SERVER_IP=127.0.0.1"
       - "WORKER_PROCESSES=1"
       - "NGINX_HTTP_CONF=access_log /tmp/hls/access.log;" 
-      - "IFRAME=https://google.com" 
+      - "FEEDBACK=https://google.com" 
       - "GANALYTICS=UA-00000000-0"
       - "BLACKLIST_MESSAGE=<strong>Blacklist Message!</strong>"
         # Blacklisted IPs with be redirected to error page
